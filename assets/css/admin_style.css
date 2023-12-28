@@ -1,0 +1,736 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap");
+
+:root {
+  --green: #27ae60;
+  --orange: #f39c12;
+  --red: #e74c3c;
+  --black: #333;
+  --light-color: #666;
+  --white: #fff;
+  --light-bg: #f6f6f6;
+  --border: 0.2rem solid var(--black);
+  --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+* {
+  font-family: "Rubik", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: 0;
+  border: 0;
+}
+
+*::selection {
+  background: var(--green);
+  color: var(--white);
+}
+
+*::-webkit-scrollbar {
+  height: 0.5rem;
+  width: 1rem;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--green);
+}
+
+body {
+  background: var(--light-bg);
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6.5rem;
+}
+
+section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.btn,
+.delete-btn,
+.option-btn {
+  display: block;
+  width: 100%;
+  padding: 1.5rem 3rem;
+  font-size: 2rem;
+  color: var(--white);
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.btn:hover,
+.delete-btn:hover,
+.option-btn:hover {
+  background: var(--black);
+}
+
+.btn {
+  background: var(--green);
+}
+
+.option-btn {
+  background: var(--orange);
+}
+
+.delete-btn {
+  background: var(--red);
+}
+
+.flex-btn {
+  display: flex;
+  gap: 1rem;
+}
+
+.message {
+  position: sticky;
+  top: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: var(--light-bg);
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  z-index: 1000;
+}
+
+.message span {
+  font-size: 2rem;
+  color: var(--black);
+}
+
+.message i {
+  font-size: 2.5rem;
+  color: var(--red);
+  cursor: pointer;
+}
+
+.message i:hover {
+  color: var(--black);
+}
+
+.title {
+  font-size: 3.5rem;
+  color: var(--black);
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.empty {
+  padding: 1.5rem;
+  font-size: 2rem;
+  color: var(--red);
+  background: var(--white);
+  border: var(--border);
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+  text-align: center;
+  text-transform: capitalize;
+}
+
+/* form-container */
+
+.form-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container form {
+  padding: 2rem;
+  background: var(--white);
+  border: var(--border);
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+  text-align: center;
+  width: 50rem;
+}
+
+.form-container form h3 {
+  font-size: 3rem;
+  color: var(--black);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.form-container form .box {
+  width: 100%;
+  padding: 1.4rem;
+  margin: 1rem 0;
+  font-size: 1.8rem;
+  color: var(--black);
+  background: var(--light-bg);
+  border: var(--border);
+  border-radius: 0.5rem;
+}
+
+.form-container form p {
+  font-size: 2.2rem;
+  color: var(--light-color);
+  margin-top: 2rem;
+}
+
+.form-container form p a {
+  color: var(--green);
+}
+
+.form-container form p a:hover {
+  text-decoration: underline;
+}
+
+/* header */
+
+.header {
+  background: var(--white);
+  box-shadow: var(--box-shadow);
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.header .flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.header .flex .logo {
+  font-size: 2.5rem;
+  color: var(--black);
+}
+
+.header .flex .logo span {
+  color: var(--green);
+}
+
+.header .flex .navbar a {
+  margin: 0 1rem;
+  font-size: 2rem;
+  color: var(--light-color);
+}
+
+.header .flex .navbar a:hover {
+  text-decoration: underline;
+  color: var(--green);
+}
+
+.header .flex .icons > * {
+  font-size: 2.5rem;
+  color: var(--light-color);
+  margin-left: 1.5rem;
+  cursor: pointer;
+}
+
+.header .flex .icons > *:hover {
+  color: var(--green);
+}
+
+.header .flex .profile {
+  width: 33rem;
+  position: absolute;
+  top: 120%;
+  right: 2rem;
+  padding: 2rem;
+  border: var(--border);
+  border-radius: 0.5rem;
+  background: var(--white);
+  text-align: center;
+  display: none;
+  animation: fadeIn 0.2s linear;
+}
+
+.header .flex .profile.active {
+  display: inline-block;
+}
+
+@keyframes fadeIn {
+  0% {
+    transform: translateY(1rem);
+  }
+}
+
+.header .flex .profile img {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.header .flex .profile p {
+  font-size: 2rem;
+  color: var(--light-color);
+  padding: 0.5rem 0;
+}
+
+#menu-btn {
+  display: none;
+}
+
+/* update-profile */
+
+.update-profile form {
+  padding: 2rem;
+  max-width: 70rem;
+  margin: 0 auto;
+  background: var(--white);
+  border: var(--border);
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+  text-align: center;
+}
+
+.update-profile form .flex {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.update-profile form img {
+  width: 20rem;
+  height: 20rem;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+}
+
+.update-profile form .inputBox {
+  text-align: left;
+  flex: 1 1 30rem;
+}
+
+.update-profile form .inputBox span {
+  display: block;
+  padding-top: 1rem;
+  font-size: 1.8rem;
+  color: var(--light-color);
+}
+
+.update-profile form .inputBox .box {
+  width: 100%;
+  padding: 1.2rem 1.4rem;
+  font-size: 1.6rem;
+  color: var(--black);
+  border: var(--border);
+  border-radius: 0.5rem;
+  background: var(--light-bg);
+  margin: 1rem 0;
+}
+
+/* dashboard */
+
+.dashboard .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.dashboard .box-container .box {
+  padding: 2rem;
+  background: var(--white);
+  border: var(--border);
+  border-radius: 0.5rem;
+  text-align: center;
+  box-shadow: var(--box-shadow);
+}
+
+.dashboard .box-container .box h3 {
+  font-size: 3.5rem;
+  color: var(--black);
+}
+
+.dashboard .box-container .box p {
+  font-size: 2rem;
+  color: var(--light-color);
+  padding: 1.5rem;
+  background: var(--light-bg);
+  border: var(--border);
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
+
+/* add-products */
+
+.add-products form {
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 2rem;
+  background: var(--white);
+  border: var(--border);
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.add-products form .flex {
+  display: flex;
+  gap: 1.5rem;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.add-products form .flex .inputBox {
+  flex: 1 1 25rem;
+}
+
+.add-products form .box {
+  width: 100%;
+  padding: 1.2rem 1.4rem;
+  font-size: 1.6rem;
+  color: var(--black);
+  margin: 1rem 0;
+  border: var(--border);
+  border-radius: 0.5rem;
+  background: var(--light-bg);
+}
+
+.add-products form textarea {
+  height: 20rem;
+  resize: none;
+}
+
+/* show-products */
+
+.show-products {
+  padding-top: 0;
+}
+
+.show-products .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(33rem, 1fr));
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.show-products .box-container .box {
+  padding: 2rem;
+  background: var(--white);
+  border: var(--border);
+  border-radius: 0.5rem;
+  text-align: center;
+  box-shadow: var(--box-shadow);
+  position: relative;
+}
+
+.show-products .box-container .box .price {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 1rem;
+  font-size: 2rem;
+  color: var(--white);
+  background: var(--red);
+  border-radius: 0.5rem;
+}
+
+.show-products .box-container .box img {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.show-products .box-container .box .name {
+  font-size: 2rem;
+  color: var(--black);
+  margin: 0.5rem 0;
+}
+
+.show-products .box-container .box .category {
+  font-size: 1.8rem;
+  color: var(--green);
+}
+
+.show-products .box-container .box .details {
+  font-size: 1.5rem;
+  color: var(--light-color);
+  padding-top: 1rem;
+  line-height: 1.5;
+}
+
+/* update-product */
+
+.update-product form {
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 2rem;
+  background: var(--white);
+  border: var(--border);
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.update-product form img {
+  height: 25rem;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.update-product form .box {
+  width: 100%;
+  padding: 1.2rem 1.4rem;
+  margin: 1rem 0;
+  font-size: 1.8rem;
+  color: var(--black);
+  background: var(--light-bg);
+  border: var(--border);
+  border-radius: 0.5rem;
+}
+
+/* placed-orders */
+
+.placed-orders .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 33rem);
+  gap: 1.5rem;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.placed-orders .box-container .box {
+  padding: 2rem;
+  background: var(--white);
+  border: var(--border);
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+}
+
+.placed-orders .box-container .box p {
+  font-size: 2rem;
+  color: var(--light-color);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  word-break: break-all;
+}
+
+.placed-orders .box-container .box .drop-down {
+  width: 100%;
+  padding: 1.2rem 1.4rem;
+  font-size: 1.8rem;
+  border: var(--border);
+  border-radius: 0.5rem;
+  background: var(--light-bg);
+  margin-bottom: 0.5rem;
+}
+
+/* user-accounts */
+
+.user-accounts .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 33rem);
+  gap: 1.5rem;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.user-accounts .box-container .box {
+  padding: 2rem;
+  background: var(--white);
+  border: var(--border);
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+  text-align: center;
+}
+
+.user-accounts .box-container .box img {
+  height: 15rem;
+  width: 15rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.user-accounts .box-container .box p {
+  font-size: 2rem;
+  color: var(--light-color);
+  padding: 0.5rem 0;
+  line-height: 1.5;
+}
+
+.user-accounts .box-container .box p span {
+  color: var(--green);
+}
+
+/* messages */
+
+.messages .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 33rem);
+  gap: 1.5rem;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.messages .box-container .box {
+  padding: 2rem;
+  background: var(--white);
+  border: var(--border);
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+}
+
+.messages .box-container .box p {
+  font-size: 2rem;
+  color: var(--light-color);
+  padding: 0.5rem 0;
+  line-height: 1.5;
+  word-break: break-all;
+}
+
+.messages .box-container .box span {
+  color: var(--green);
+}
+
+/* footer */
+
+.footer {
+  background: var(--white);
+}
+
+.footer .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+.footer .box-container .box h3 {
+  font-size: 2rem;
+  color: var(--black);
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.footer .box-container a,
+.footer .box-container p {
+  display: block;
+  font-size: 1.6rem;
+  color: var(--light-color);
+  padding: 1.3rem 0;
+}
+
+.footer .box-container a:hover {
+  text-decoration: underline;
+  color: var(--green);
+}
+
+.footer .box-container a i,
+.footer .box-container p i {
+  color: var(--green);
+  padding-right: 1rem;
+}
+
+.footer .credit {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--black);
+  padding: 3rem 2rem;
+  line-height: 1.5;
+  margin-top: 2rem;
+  border-top: var(--border);
+}
+
+.footer .credit span {
+  color: var(--green);
+}
+
+/* media query */
+
+@media screen and (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #menu-btn {
+    display: inline-block;
+    transition: 0.2s linear;
+  }
+
+  /* header */
+  .header .flex .navbar {
+    position: absolute;
+    top: 99%;
+    left: 0;
+    right: 0;
+    border-top: var(--border);
+    border-bottom: var(--border);
+    background: var(--white);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: 0.2s linear;
+  }
+
+  .header .flex .navbar.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  .header .flex .navbar a {
+    display: block;
+    margin: 2rem;
+  }
+
+  /* update-profile */
+  .update-profile form .flex {
+    gap: 0;
+  }
+
+  /* placed-orders */
+
+  .placed-orders .box-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+
+  .flex-btn {
+    flex-flow: column;
+    gap: 0;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  /* update-product */
+  .update-product form img {
+    height: auto;
+    width: 100%;
+  }
+
+  /* user-accounts */
+  .user-accounts .box-container {
+    grid-template-columns: 1fr;
+  }
+
+  /* messages */
+
+  .messages .box-container {
+    grid-template-columns: 1fr;
+  }
+}
