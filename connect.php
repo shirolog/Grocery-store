@@ -4,7 +4,7 @@ try{
 
 $db_name = 'mysql:dbname=grocery_db;host=localhost';
 $user_name = 'root';
-$password = 'HTMLCSS1728';
+$password = '';
 
 $conn = new PDO($db_name, $user_name, $password);
 
